@@ -14,11 +14,9 @@ const App = () => {
       <div className="site-layout-content">
         <AuthProvider>
           <Router>
-            <div>
-              <PrivateRoute exact path="/" component={Home} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/signup" component={SignUp} />
-            </div>
+            <PrivateRoute exact path="/" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={SignUp} />
           </Router>
         </AuthProvider>
       </div>

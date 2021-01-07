@@ -1,0 +1,24 @@
+.login-wrapper {
+  width: 100%;
+  height: calc(100vh - 200px);
+  display: grid;
+  place-content: center;
+}
+
+.login {
+  background-color: #0d2e5b;
+  width: 45rem;
+  height: 20rem;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
+  color: white;
+}
+
+.login h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 26px;
+  color: white;
+  font-weight: bold;
+}

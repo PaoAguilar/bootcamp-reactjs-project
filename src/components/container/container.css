@@ -1,7 +1,7 @@
 .site-layout-content {
-  min-height: 100vh;
+  min-height: calc(100vh - 134px);
   padding: 24px;
-  background: #fff;
+  background: #b6b9bb;
 }
 .ant-row-rtl #components-layout-demo-top .logo {
   float: right;
