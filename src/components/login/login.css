@@ -22,3 +22,9 @@
   color: white;
   font-weight: bold;
 }
+
+.login p {
+  display: flex;
+  justify-content: center;
+  color: white;
+}

@@ -1,7 +1,8 @@
 import React, { useCallback, useContext } from "react";
 import { Row, Col, Form, Input, Button } from "antd";
 import { withRouter, Redirect } from "react-router";
-import app from "./../../base";
+import { Link } from "@reach/router";
+import app from "../../firebase";
 import { AuthContext } from "./../Auth";
 import login from "../../img/login4.svg";
 import "./login.css";
@@ -39,7 +40,6 @@ const Login = ({ history }) => {
             <Form onFinish={handleLogin}>
               <Form.Item
                 name="email"
-                label={<label style={{ color: "white" }}>E-mail</label>}
                 rules={[
                   {
                     type: "email",
@@ -51,10 +51,9 @@ const Login = ({ history }) => {
                   },
                 ]}
               >
-                <Input />
+                <Input placeholder="Enter your email address" />
               </Form.Item>
               <Form.Item
-                label={<label style={{ color: "white" }}>Password</label>}
                 name="password"
                 style={{ color: "white" }}
                 rules={[
@@ -64,10 +63,13 @@ const Login = ({ history }) => {
                   },
                 ]}
               >
-                <Input.Password />
+                <Input.Password placeholder="Enter your password" />
               </Form.Item>
+              <p className="text-center my-3">
+                You don't have an account? <Link to="/signup">SignUp</Link>
+              </p>
               <Form.Item>
-                <Button type="primary" htmlType="submit" block>
+                <Button type="primary" shape="round" htmlType="submit" block>
                   Submit
                 </Button>
               </Form.Item>
