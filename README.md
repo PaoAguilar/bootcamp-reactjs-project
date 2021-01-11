@@ -5,7 +5,7 @@
 
 ## Netlify
 
-https://bootcamp-reactjs-site.netlify.app/login
+https://bootcamp-reactjs-site.netlify.app/
 
 ## Tech Stack
 
