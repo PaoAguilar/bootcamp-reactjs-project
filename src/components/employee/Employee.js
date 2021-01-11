@@ -178,11 +178,9 @@ const Employee = (props) => {
                     shape="round"
                     htmlType="submit"
                     size="large"
+                    block
                   >
                     Save
-                  </Button>
-                  <Button type="primary" shape="round" size="large">
-                    Cancel
                   </Button>
                 </Form.Item>
               </Form>

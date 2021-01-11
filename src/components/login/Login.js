@@ -1,7 +1,7 @@
 import React, { useCallback, useContext } from "react";
 import { Row, Col, Form, Input, Button } from "antd";
 import { withRouter, Redirect } from "react-router";
-import { Link } from "@reach/router";
+import { Link } from "react-router-dom";
 import app from "../../firebase";
 import { AuthContext } from "./../Auth";
 import login from "../../img/login4.svg";
@@ -53,6 +53,7 @@ const Login = ({ history }) => {
               >
                 <Input placeholder="Enter your email address" />
               </Form.Item>
+
               <Form.Item
                 name="password"
                 style={{ color: "white" }}
@@ -66,11 +67,14 @@ const Login = ({ history }) => {
                 <Input.Password placeholder="Enter your password" />
               </Form.Item>
               <p className="text-center my-3">
-                You don't have an account? <Link to="/signup">SignUp</Link>
+                You don't have an account?
+                <Link to="/signup" className="nav-link">
+                  SignUp
+                </Link>
               </p>
               <Form.Item>
                 <Button type="primary" shape="round" htmlType="submit" block>
-                  Submit
+                  Login
                 </Button>
               </Form.Item>
             </Form>
