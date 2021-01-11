@@ -9,9 +9,11 @@ import {
   Card,
   Collapse,
   Table,
+  Space,
 } from "antd";
 import { EditOutlined } from "@ant-design/icons";
-import { getEmployees } from "./../../actions/actions";
+import { getEmployees, deleteEmployees } from "./../../actions/actions";
+import { toast } from "react-toastify";
 
 const { Panel } = Collapse;
 
@@ -24,7 +26,6 @@ const Employee = (props) => {
   }
 
   useEffect(() => {
-    // peticion a firebase
     console.log("Getting data");
     fetchEmployee();
   }, []);
@@ -43,6 +44,14 @@ const Employee = (props) => {
     props.addOrEdit(employee);
     fetchEmployee();
     form.resetFields();
+  };
+
+  const onDeleteEmployee = async (id) => {
+    if (window.confirm("Would you like to delete this employee??")) {
+      await deleteEmployees(id);
+      fetchEmployee();
+      toast.error("Employee deleted successfully");
+    }
   };
 
   // TABLE DATA
@@ -68,14 +77,18 @@ const Employee = (props) => {
       dataIndex: "dui",
     },
     {
-      title: "Actions",
+      title: "Action",
       key: "action",
+      render: (employee) => {
+        return (
+          <Space size="middle">
+            <a>Edit</a>
+            <a onClick={() => onDeleteEmployee(employee.id)}>Delete</a>
+          </Space>
+        );
+      },
     },
   ];
-
-  function onChange(pagination) {
-    console.log("params", pagination);
-  }
 
   return (
     <div className="employee-wrapper">
@@ -178,13 +191,12 @@ const Employee = (props) => {
         </div>
         {/* </Panel> */}
         {/* </Collapse> */}
-        <Card style={{ width: 700 }}>
+        <Card style={{ width: 800 }}>
           <Col>
             <Table
               columns={columns}
               dataSource={employees}
               rowKey="id"
-              onChange={onChange}
               pagination={{
                 defaultPageSize: 5,
               }}
