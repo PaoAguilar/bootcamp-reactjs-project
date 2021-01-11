@@ -1,6 +1,8 @@
 import React from "react";
 import app from "./../firebase";
 import Employee from "./employee/Employee";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const db = app.firestore();
 
@@ -10,13 +12,14 @@ const Home = () => {
     console.log(employeeObject);
     //we can add a collection on firestore call employees, and add the data
     await db.collection("employees").doc().set(employeeObject);
-    console.log("nueva tarea agregada");
+    toast.success("New Employee added");
   };
 
   return (
     <>
       <button onClick={() => app.auth().signOut()}>Sign Out</button>
       <Employee addOrEdit={addOrEdit} />
+      <ToastContainer position="top-right" autoClose={2000} />
     </>
   );
 };
