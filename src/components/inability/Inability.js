@@ -18,7 +18,7 @@ import { toast } from "react-toastify";
 const { Panel } = Collapse;
 
 const Inability = (props) => {
-  const [inabilities, setInabilities] = useState([]);
+  const [inability, setInabilities] = useState([]);
 
   async function fetchInabilities() {
     const response = await getInabilities();
@@ -34,21 +34,22 @@ const Inability = (props) => {
   const dateFormat = "DD/MM/YYYY";
 
   const onSubmit = (data) => {
-    console.log(data);
-    const inability = {
+    const Inabilitiees = {
       ...data,
-      date: data.date.format("DD/MM/YYYY"),
+      admission_date: data.admission_date.format("DD/MM/YYYY"),
+      start_date: data.start_date.format("DD/MM/YYYY"),
+      end_date: data.end_date.format("DD/MM/YYYY"),
     };
-    props.addOrEdit(inability);
+    props.addOrEdit(Inabilitiees);
     fetchInabilities();
     form.resetFields();
   };
 
   const onDeleteInabilities = async (id) => {
-    if (window.confirm("Would you like to delete this employee??")) {
+    if (window.confirm("Would you like to delete this Disable??")) {
       await deleteInabilities(id);
       fetchInabilities();
-      toast.error("Employee deleted successfully");
+      toast.error("Disable employee deleted successfully");
     }
   };
 
@@ -63,6 +64,11 @@ const Inability = (props) => {
       title: "Medical Unit",
       dataIndex: "Medical_unit",
       key: "Medical_unit",
+    },
+    {
+      title: "Employes",
+      dataIndex: "Employes",
+      key: "Employes",
     },
     {
       title: "Doctor",
@@ -96,57 +102,23 @@ const Inability = (props) => {
   return (
     <div className="inability-wrapper">
       <Row justify="center">
-        {/* <Collapse accordion>
-          <Panel
-            header="Employee"
-            key="1"
-            className="site-collapse-custom-panel"
-          > */}
-        <div className="employee-form">
+        <div className="Inability-form">
           <Card style={{ width: 350 }}>
             <Col>
               <Form layout="vertical" form={form} onFinish={onSubmit}>
-                <Form.Item
-                  name="code"
-                  rules={[
-                    {
-                      required: true,
-                    },
-                  ]}
-                >
-                  <Input
-                    size="large"
-                    placeholder="Enter the employee's code"
-                    prefix={<EditOutlined />}
-                  />
-                </Form.Item>
-                <Form.Item
-                  name="name"
-                  rules={[
-                    {
-                      required: true,
-                    },
-                  ]}
-                >
-                  <Input
-                    name="name"
-                    size="large"
-                    placeholder="Enter the employee's name"
-                    prefix={<EditOutlined />}
-                  />
-                </Form.Item>
-                <Form.Item name="date">
+                <Form.Item name="admission_date">
                   <DatePicker
-                    name="date"
+                    name="admission_date"
                     format={dateFormat}
                     style={{ width: 300 }}
                     size="large"
-                    placeholder="Date of entry to the company"
+                    placeholder="Admission Date"
                     prefix={<EditOutlined />}
                   />
                 </Form.Item>
+                
                 <Form.Item
-                  name="position"
+                  name="Medical_unit"
                   rules={[
                     {
                       required: true,
@@ -154,14 +126,14 @@ const Inability = (props) => {
                   ]}
                 >
                   <Input
-                    name="position"
                     size="large"
-                    placeholder="Enter position"
+                    placeholder="Enter the Medical Unit"
                     prefix={<EditOutlined />}
                   />
                 </Form.Item>
+
                 <Form.Item
-                  name="dui"
+                  name="Employes"
                   rules={[
                     {
                       required: true,
@@ -169,12 +141,49 @@ const Inability = (props) => {
                   ]}
                 >
                   <Input
-                    name="dui"
                     size="large"
-                    placeholder="Enter DUI"
+                    placeholder="Enter the Employes"
                     prefix={<EditOutlined />}
                   />
                 </Form.Item>
+                
+                <Form.Item
+                  name="Doctor"
+                  rules={[
+                    {
+                      required: true,
+                    },
+                  ]}
+                >
+                  <Input
+                    size="large"
+                    placeholder="Enter the Doctor"
+                    prefix={<EditOutlined />}
+                  />
+                </Form.Item>
+
+                <Form.Item name="start_date">
+                  <DatePicker
+                    name="start_date"
+                    format={dateFormat}
+                    style={{ width: 300 }}
+                    size="large"
+                    placeholder="Start Date"
+                    prefix={<EditOutlined />}
+                  />
+                </Form.Item>
+
+                <Form.Item name="end_date">
+                  <DatePicker
+                    name="end_date"
+                    format={dateFormat}
+                    style={{ width: 300 }}
+                    size="large"
+                    placeholder="End Date"
+                    prefix={<EditOutlined />}
+                  />
+                </Form.Item>
+
                 <Form.Item>
                   <Button
                     type="primary"
@@ -196,7 +205,7 @@ const Inability = (props) => {
           <Col>
             <Table
               columns={columns}
-              dataSource={inabilities}
+              dataSource={inability}
               rowKey="id"
               pagination={{
                 defaultPageSize: 5,

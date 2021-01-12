@@ -23,7 +23,6 @@ export const getInabilities = async () => {
   const docs = await db.collection("inability").get();
   const inability = [];
   docs.forEach((doc) => {
-    // console.log(doc.data());
     inability.push({ ...doc.data(), id: doc.id });
   });
   return inability;
