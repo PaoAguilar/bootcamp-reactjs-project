@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/bootcamp-reactjs-project/static/css/main.fd2193df.chunk.css",
+    "main.js": "/bootcamp-reactjs-project/static/js/main.3c8e0981.chunk.js",
+    "main.js.map": "/bootcamp-reactjs-project/static/js/main.3c8e0981.chunk.js.map",
+    "runtime-main.js": "/bootcamp-reactjs-project/static/js/runtime-main.2436c1e2.js",
+    "runtime-main.js.map": "/bootcamp-reactjs-project/static/js/runtime-main.2436c1e2.js.map",
+    "static/css/2.bad4a651.chunk.css": "/bootcamp-reactjs-project/static/css/2.bad4a651.chunk.css",
+    "static/js/2.f3b630a9.chunk.js": "/bootcamp-reactjs-project/static/js/2.f3b630a9.chunk.js",
+    "static/js/2.f3b630a9.chunk.js.map": "/bootcamp-reactjs-project/static/js/2.f3b630a9.chunk.js.map",
+    "static/js/3.25b28da9.chunk.js": "/bootcamp-reactjs-project/static/js/3.25b28da9.chunk.js",
+    "static/js/3.25b28da9.chunk.js.map": "/bootcamp-reactjs-project/static/js/3.25b28da9.chunk.js.map",
+    "index.html": "/bootcamp-reactjs-project/index.html",
+    "static/css/2.bad4a651.chunk.css.map": "/bootcamp-reactjs-project/static/css/2.bad4a651.chunk.css.map",
+    "static/css/main.fd2193df.chunk.css.map": "/bootcamp-reactjs-project/static/css/main.fd2193df.chunk.css.map",
+    "static/js/2.f3b630a9.chunk.js.LICENSE.txt": "/bootcamp-reactjs-project/static/js/2.f3b630a9.chunk.js.LICENSE.txt",
+    "static/media/login4.a4855799.svg": "/bootcamp-reactjs-project/static/media/login4.a4855799.svg",
+    "static/media/signup.8296bf9a.svg": "/bootcamp-reactjs-project/static/media/signup.8296bf9a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2436c1e2.js",
+    "static/css/2.bad4a651.chunk.css",
+    "static/js/2.f3b630a9.chunk.js",
+    "static/css/main.fd2193df.chunk.css",
+    "static/js/main.3c8e0981.chunk.js"
+  ]
+}
