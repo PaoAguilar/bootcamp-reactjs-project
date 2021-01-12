@@ -18,3 +18,21 @@ export const deleteEmployees = async (id) => {
     console.log(error);
   }
 };
+
+export const getInabilities = async () => {
+  const docs = await db.collection("inability").get();
+  const inability = [];
+  docs.forEach((doc) => {
+    // console.log(doc.data());
+    inability.push({ ...doc.data(), id: doc.id });
+  });
+  return inability;
+};
+
+export const deleteInabilities = async (id) => {
+  try {
+    db.collection("inability").doc(id).delete();
+  } catch (error) {
+    console.log(error);
+  }
+};

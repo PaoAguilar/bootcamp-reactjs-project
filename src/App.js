@@ -7,6 +7,8 @@ import SignUp from "./components/login/SignUp";
 import { AuthProvider } from "./components/Auth";
 import PrivateRoute from "./components/PrivateRoute";
 import "./App.css";
+import Employee from "./components/employee/Employee";
+import Inability from "./components/inability/Inability";
 
 const App = () => {
   return (
@@ -14,6 +16,8 @@ const App = () => {
       <div className="site-layout-content">
         <AuthProvider>
           <Router>
+            <PrivateRoute exact path="/employe" component={Employee} />
+            <PrivateRoute exact path="/disable" component={Inability} />
             <PrivateRoute exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={SignUp} />
