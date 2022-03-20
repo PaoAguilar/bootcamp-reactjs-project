@@ -1,8 +1,3 @@
-## Integrantes
-
-- Paola Aguilar
-- Alexis Ramirez ????
-
 ## Netlify
 
 https://bootcamp-reactjs-site.netlify.app/
